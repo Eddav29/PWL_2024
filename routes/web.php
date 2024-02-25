@@ -27,3 +27,17 @@ Route::get('/world', function () {
 Route::get('/about', function () {
     return 'Nama : Eddo Dava Alfarisi <br> NIM : 2241720232';
 });
+//*Route Parameters
+// Route::get('/user/{name}', function ($name) {
+//     return 'Nama Saya '.$name;
+// });
+Route::get('/articles/{id}', function ($id) {
+    return ' Halaman Artikel dengan ID '.$id;
+});
+//*Optional Parameters
+// Route::get('/user/{name?}', function ($name=null) {
+//     return 'Nama saya '.$name;
+// });
+Route::get('/user/{name?}', function ($name='John') {
+    return 'Nama saya '.$name;
+});
