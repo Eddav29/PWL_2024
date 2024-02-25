@@ -12,7 +12,18 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//*Basic Routing
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/hello', function () {
+    return 'Hello World';
+});
+
+Route::get('/world', function () {
+    return 'World';
+});
+Route::get('/about', function () {
+    return 'Nama : Eddo Dava Alfarisi <br> NIM : 2241720232';
 });
