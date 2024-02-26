@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticlesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +49,16 @@ Route::get('/hello', [WelcomeController::class,'hello']);
 Route::get('/', [HomeController::class,'welcome']);
 Route::get('/about', [AboutController::class,'about']);
 Route::get('/articles/{id}', [ArticlesController::class,'articles']);
+
+use App\Http\Controllers\PhotoController;
+Route::resource('photos', PhotoController::class);
+//*View
+// Route::get('/greeting', function () {
+//     return view('hello', ['name' => 'Andi']);
+// });
+    
+// Route::get('/greeting', function () {
+//     return view('blog.hello', ['name' => 'Andi']);
+//     });
+Route::get('/greeting', [WelcomeController::class, 
+'greeting']);
